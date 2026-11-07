@@ -24,7 +24,7 @@ flowchart LR
 
 | # | Stage | What it does | Folder |
 |---|---|---|---|
-| 1 | Inventory | Every table the old tool loads, who reads it, who owns it, which wave | [1_inventory](1_inventory) |
+| 1 | Inventory | Every table the old tool loads, who reads it, who owns it, which wave. Includes a ready prompt for Claude Code / Codex | [1_inventory](1_inventory) |
 | 2 | Ingest | New tool loads the same tables from the same sources | [2_ingest](2_ingest) |
 | 3 | Parallel pipelines | Same models run twice: main reads old tool into prod, migration branch reads new tool into a test schema | [3_pipelines](3_pipelines) |
 | 4 | Gate | Compares every table at RAW, Silver and Gold, row by row, stores results, emails PASS/FAIL | [4_gate](4_gate) |
@@ -53,7 +53,7 @@ BLOCKED: not enough clean days. Nothing written.
 ## Use it for real
 
 - Point `common.connect()` at your warehouse (Snowflake, BigQuery, Databricks). The SQL is standard.
-- Fill `1_inventory/owners.csv` and `4_gate/table_pairs.csv` with your tables.
+- Fill `1_inventory/owners.csv` and `4_gate/table_pairs.csv` with your tables. Faster: paste the [inventory prompt](1_inventory/README.md) into Claude Code or Codex.
 - Set the bookkeeping column names in `4_gate/gate.py` (e.g. `_fivetran_deleted`, your new tool's load timestamp).
 - Schedule `python 4_gate/gate.py --email` after both loads land. [.github/workflows/daily-gate.yml](.github/workflows/daily-gate.yml) shows it on a daily cron.
 
