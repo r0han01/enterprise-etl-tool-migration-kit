@@ -1,0 +1,5 @@
+name,old_table,new_table,key_columns,reads
+customers,legacy_raw.customers,newtool_raw.customers,customer_id,old
+items,legacy_raw.items,newtool_raw.items,item_id,old
+orders,legacy_raw.orders,newtool_raw.orders,order_id,old
+order_lines,legacy_raw.order_lines,newtool_raw.order_lines,order_id|line_no,old

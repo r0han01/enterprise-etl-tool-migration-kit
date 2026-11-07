@@ -1,0 +1,6 @@
+table_name,source_system,business_owner,new_tool_owner
+customers,ERP_SALES,Sales Ops,Ingestion team
+items,ERP_INVENTORY,Supply Chain,Ingestion team
+orders,ERP_SALES,Sales Ops,Ingestion team
+order_lines,ERP_SALES,Sales Ops,Ingestion team
+customers_backup_2024,ERP_SALES,Sales Ops,Ingestion team

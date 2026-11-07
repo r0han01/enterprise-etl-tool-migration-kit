@@ -1,0 +1,26 @@
+name: daily-gate
+
+on:
+  schedule:
+    - cron: "0 14 * * *"   # every day, after both tools' morning loads
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      # Demo: runs the whole migration on fake data. For real use: python 4_gate/gate.py --email
+      - run: python run_demo.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gate-report
+          path: output/*.html

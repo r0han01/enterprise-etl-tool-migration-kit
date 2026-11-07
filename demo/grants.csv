@@ -1,0 +1,9 @@
+role,table_name
+dbt_prod_role,legacy_raw.customers
+dbt_prod_role,legacy_raw.items
+dbt_prod_role,legacy_raw.orders
+dbt_prod_role,legacy_raw.order_lines
+bi_role,legacy_raw.customers
+bi_role,legacy_raw.orders
+analyst_role,legacy_raw.customers
+analyst_role,legacy_raw.customers_backup_2024

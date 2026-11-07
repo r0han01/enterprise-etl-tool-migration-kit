@@ -1,0 +1,10 @@
+wave,layer,left_table,right_table,key_columns
+Wave 2,RAW,legacy_raw.customers,newtool_raw.customers,customer_id
+Wave 2,RAW,legacy_raw.items,newtool_raw.items,item_id
+Wave 2,RAW,legacy_raw.orders,newtool_raw.orders,order_id
+Wave 2,RAW,legacy_raw.order_lines,newtool_raw.order_lines,order_id|line_no
+Wave 2,SILVER,prod.silver_customers,test.silver_customers,customer_id
+Wave 2,SILVER,prod.silver_items,test.silver_items,item_id
+Wave 2,SILVER,prod.silver_orders,test.silver_orders,order_id
+Wave 2,SILVER,prod.silver_order_lines,test.silver_order_lines,order_id|line_no
+Wave 2,GOLD,prod.gold_sales_by_day,test.gold_sales_by_day,order_date
